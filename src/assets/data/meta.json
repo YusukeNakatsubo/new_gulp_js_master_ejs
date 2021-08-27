@@ -1,0 +1,20 @@
+{
+  "default": {
+    "title": "pageTitle",
+    "description": "description",
+    "url":"siteUrl",
+    "ogp_img": "ogpImage",
+    "sitename": "siteName"
+  },
+  "top": {
+    "title": "pageTitle",
+    "description": "description",
+    "url":"siteUrl",
+    "ogp_img": "ogpImage",
+    "sitename": "siteName"
+  },
+  "bottom": {
+    "title": "BOTTOM",
+    "url":"http://localhost:8080/bottom/"
+  }
+}

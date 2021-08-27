@@ -1,0 +1,23 @@
+<%
+  let metaJsonKeys = meta_json['default'];
+  for ( var metaJsonKey in metaJsonKeys ) {
+    if ( typeof page[metaJsonKey] === 'undefined' ) {
+      page[metaJsonKey] = metaJsonKeys[metaJsonKey];
+    }
+  }
+%>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="format-detection" content="telephone=no">
+  <title><%= page['title'] %> </title>
+  <meta name="description" content="<%= page['description'] %>" />
+  <meta property="og:title" content="<%= page['title'] %>">
+  <meta property="og:image" content="<%= page['ogp_img'] %>">
+  <meta property="og:description" content="<%= page['description'] %>">
+  <meta property="og:url" content="<%= page['url'] %>">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>

@@ -1,0 +1,51 @@
+- Sitename = "sitename"
+- Pageurl = "pageurl"
+- Title = "Title"
+- Description = "description"
+- Canonicalurl = "canonical"
+- Alternateurl = "alternate"
+/ Linktype >>> 1(canonical), 2(alternate), 3(none)
+- Linktype = 3
+/ OGPtype >>> 1(website), 2(article)
+- OGPtype = 1
+
+doctype html
+html lang="ja" prefix="og: http://ogp.me/ns#"
+  head
+    / canonical or alternate or none
+    - case Linktype
+    - when 1
+      link rel="canonical" href = Canonicalurl
+    - when 2
+      link rel="alternate" media="only screen and (max-width: 640px)" href = Alternateurl
+    - when 3
+    / for iE
+    /![if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge' /><![endif]
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title = Title
+    meta name="description" content = Description
+    / OGP
+    - case OGPtype
+    - when 1
+      meta property="og:type" content="website"
+    - when 2
+      meta property="og:type" content="article"
+    meta property="og:site_name" content = Sitename
+    meta property="og:url" content = Pageurl
+    meta property="og:title" content = Title
+    meta property="og:description" content = Description
+    meta property="og:image" content = "#{Pageurl}images/ogp.png"
+    meta property="og:locale" content="ja_JP"
+    / js
+    script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"
+    javascript:
+      window.jQuery || document.write('<script src="js/jquery-1.11.3.min.js"><\/script>')
+    script src="assets/js/index.js"
+    / CSS
+    link rel="stylesheet" href="assets/css/style.css"
+  body
+    include header
+    main
+      h1 test
+    include footer

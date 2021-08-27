@@ -1,0 +1,5 @@
+# Browsers that we support
+last 2 versions
+> 0.2%
+IE >= 10 # IE10以上
+Android >= 5 # Android5以上

@@ -1,0 +1,1 @@
+{"version":3,"sources":["_reset.scss"],"names":[],"mappings":"AAAA,GAAA,UAAA,CACA,EAAA,mBAAA,CAAA,mBAAA,CAAA,YAAA","file":"../style.css","sourcesContent":["h1 { color: #00f; }\np { display: flex; }"]}
